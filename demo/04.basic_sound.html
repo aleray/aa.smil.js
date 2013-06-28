@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> timesheets.js</title>
+    <style>
+        [data-timecontainer] {
+        }
+        [data-timecontainer] [smil] {
+            display: none;
+        }
+        [data-timecontainer] [smil="active"] {
+            display: block;
+        }
+        img {
+            max-width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <div data-timecontainer="seq" data-repeatCount="indefinite">
+        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg"></audio>
+        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg"></audio>
+        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg"></audio>
+        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg"></audio>
+        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg"></audio>
+    </div>
+	<script src="../lib/jquery-2.0.2.min.js"></script>
+	<script src="../src/smil.js"></script>
+</body>
+</html>
