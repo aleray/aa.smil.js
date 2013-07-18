@@ -3,30 +3,36 @@
 <head>
     <meta charset="utf-8">
     <title> timesheets.js</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
     <style>
         [data-timecontainer] {
         }
-        [data-timecontainer] [smil] {
-            display: none;
-        }
         [data-timecontainer] [smil="active"] {
-            display: block;
+            border-left: 5px solid red;
         }
-        img {
-            max-width: 300px;
+        audio {
+            display: block;
         }
 
     </style>
 </head>
 <body>
-    <div data-timecontainer="seq" data-repeatCount="indefinite">
-        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg"></audio>
-        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg"></audio>
-        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg"></audio>
-        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg"></audio>
-        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg"></audio>
+    <div id="slider"></div>
+    <div id="currentTime"></div>
+    <div id="controls">
+        <span id="play">play</span>
+        <span id="pause">pause</span>
     </div>
+    <div id="playlist" data-timecontainer="seq" data-repeatCount="indefinite">
+        <audio src="http://sound.constantvzw.org/PublicDomainDay/01_public_domain_day_intro_compr.ogg" controls></audio>
+        <audio src="http://sound.constantvzw.org/PublicDomainDay/04_public_domain_day_bookscanner_compr.ogg" controls></audio>
+    </div>
+
+    <div id="add">add an element to the playlist</div>
 	<script src="../lib/jquery-2.0.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="../lib/timecode.js"></script>
 	<script src="../src/smil.js"></script>
+	<script src="04.basic_sound.js"></script>
 </body>
 </html>
