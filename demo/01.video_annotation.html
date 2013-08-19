@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> timesheets.js</title>
+    <style>
+        video {
+            width: 20em;
+            float: left;
+        }
+        [data-timecontainer] {
+            width: 20em;
+            float: right;
+        }
+        [data-timecontainer] [smil] {
+            font-size: 9px;
+        }
+        [data-timecontainer] [smil="active"] {
+            transition-property: font-size;
+            transition-duration: 1s;
+            font-size: 36px;
+        }
+        [data-timecontainer] [smil="done"] {
+            transition-property: font-size;
+            transition-duration: 1s;
+            font-size: 9px;
+        }
+
+    </style>
+</head>
+<body>
+    <video src="http://automatist.org/video/Eames_ComputerGlossary.webm" 
+           id="video1" controls muted autoplay preload="auto">
+    </video>
+
+    <div data-mediaSync="#video1" data-timecontainer="par">
+        <div data-begin="0.163" data-end="5.99">
+            <p>a computer Glossary, or coming to terms with the data processing machine</p>
+        </div>
+
+        <div data-begin="5.99" data-end="8.916">
+            <p>Gloss: An interpretation; a note of explanation</p>
+        </div>
+
+        <div data-begin="8.916" data-end="14.349">
+            <p>Glossary: A collection of glosses</p>
+        </div>
+        <div data-begin="14.349" data-end="95.108">
+            <p>One of the keys to understanding a new or special field is getting to know something of it’s mood. A particular flavor that’s often given by its jargon, its technical vocabulary and its special words.</p>
+        </div>
+        <div data-begin="92.292" data-end="105.197">
+            <p>Those were specialists, speaking to each other.</p>
+        </div>
+        <div data-begin="105.197" data-end="147.042">
+            <p>Computer: An automatic machine that accepts instructions and information. Following the instructions, it performs operations on the information, and reports the results.</p>
+        </div>
+        <div data-begin="147.042" data-end="153.219">
+            <p>Software: A computer’s programs plus the procedure for their use.</p>
+        </div>
+        <div data-begin="153.219" data-end="157.456">
+            <p>Program: A set of instructions for performing computer operations</p>
+        </div>
+        <div data-begin="157.456" data-end="163.193">
+            <p>Flowchart</p>
+        </div>
+        <div data-begin="163.193" data-end="210.11">
+            <p>Sexist flowchart humour.</p>
+        </div>
+        <div data-begin="210.11" data-end="220.485">
+            <p>At this scale the flowchart…</p>
+        </div>
+        <div data-begin="220.485" data-end="259.29">
+            <p>Subroutine</p>
+        </div>
+        <div data-begin="259.29" data-end="297.761">
+            <p>Mnemonic: An easily remembered code word that stands for one or more computer instructions.</p>
+        </div>
+        <div data-begin="297.761">
+            <p>Language: A collection of mnemonics that has been selected and organized to allow convenient expression of a certain kind of problem.</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="../lib/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="../src/smil.js"></script>
+</body>
+</html>
