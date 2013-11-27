@@ -263,7 +263,14 @@ SMIL.Par = function(elt) {
                             timeNode.elt.get(0).pause();
                         };
 
-                        timeNode.elt.attr('smil', 'idle');
+                        if (currentTime >= timeNode.timeOut) {
+                            if (timeNode.elt.attr('smil') !== 'done') {
+                                timeNode.elt.trigger('done'); 
+                                timeNode.elt.attr('smil', 'done');
+                            };
+                        } else {
+                            timeNode.elt.attr('smil', 'idle');
+                        }
                     };
                 });
 
@@ -357,7 +364,8 @@ SMIL.parseTimeContainers = function () {
     });
 
     // Now we go over all the time container elements and we create the
-    // appropriate SMIL object (at the moment, only SMIL.seq is supported)
+    // appropriate SMIL object (at the moment, only SMIL.seq and SMIL.par are
+    // supported)
     $("[data-timecontainer]").each(function (i) {
         var type = $(this).data('timecontainer'); 
 
@@ -387,7 +395,7 @@ SMIL.destroy = function () {
 SMIL.init = function () {
     // There are 2 kinds of timenodes: any HTML element with [data-dur]
     // attribute, and audio or video tags. The later doesn't need a [data-dur]
-    // attribute because their duration is given by their media.
+    // attribute because its duration is determined by its media.
     //
     // However before parsing the timenodes, we need to make sure that we can
     // compute the duration of the media elements on the page; that is when
@@ -410,7 +418,8 @@ SMIL.init = function () {
 };
 
 
-// So here we go for the firework. The code below is trigger when the DOM is ready
+// So here we go for the firework. The code below is triggered when the DOM is
+// ready
 $(function() {
     SMIL.init();
 });
